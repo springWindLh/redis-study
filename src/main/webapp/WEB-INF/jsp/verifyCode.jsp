@@ -13,8 +13,13 @@
 </body>
 <script>
     var verifyCode = new GVerify({
-        id:"v_container",
-        randomString:${requestScope.code}
+        id: "v_container", //容器Id
+        canvasId: "verifyCanvas", //canvas的ID
+        width: "100", //默认canvas宽度
+        height: "30", //默认canvas高度
+        type: "blend", //图形验证码默认类型blend:数字字母混合类型、number:纯数字、letter:纯字母
+        code: "",
+        randomString:"hksl"
     });
     document.getElementById("my_button").onclick = function(){
         var res = verifyCode.validate(document.getElementById("code_input").value);
