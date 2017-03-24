@@ -7,5 +7,6 @@
 </head>
 <body>
 <h2>INDEX</h2>
+<a href="/code/page">验证码</a>
 </body>
 </html>

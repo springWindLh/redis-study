@@ -7,6 +7,7 @@
 <title>首页</title>
 </head>
 <body>
-	index
+	index<br>
+	<a href="/code/page">验证码</a>
 </body>
 </html>

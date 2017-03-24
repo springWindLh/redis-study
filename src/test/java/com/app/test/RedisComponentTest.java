@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -21,8 +22,8 @@ public class RedisComponentTest {
     private IJedisCacheDao jedisCacheDao;
     @Autowired
     private IUserDao userDao;
-    @Autowired
-    private JedisClusterFactory jedisClusterFactory;
+//    @Autowired
+//    private JedisClusterFactory jedisClusterFactory;
 
     @Test
     public void testSet() throws Exception {
@@ -37,5 +38,15 @@ public class RedisComponentTest {
 //        jedisClusterFactory.getJedisCluster().set("name3", "tom3");
         System.out.println(userDao.getObjectList("users"));
 //        System.out.println(result);
+    }
+
+
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
+
+    @Test
+    public void testDataRedis(){
+        redisTemplate.opsForValue().set("data1", "hello");
+        System.out.println(redisTemplate.opsForValue().get("data"));
     }
 }
