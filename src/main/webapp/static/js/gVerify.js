@@ -1,10 +1,11 @@
 !(function(window, document) {
 	function GVerify(options) { //创建一个图形验证码对象，接收options对象为参数
+		console.log("hhh");
 		this.options = { //默认options参数值
 			id: "", //容器Id
 			canvasId: "verifyCanvas", //canvas的ID
-			width: "100", //默认canvas宽度
-			height: "30", //默认canvas高度
+			width: "120", //默认canvas宽度
+			height: "50", //默认canvas高度
 			type: "blend", //图形验证码默认类型blend:数字字母混合类型、number:纯数字、letter:纯字母
 			code: "",
 			randomString:""
@@ -58,7 +59,7 @@
 			
 			ctx.textBaseline = "middle";
 
-			ctx.fillStyle = randomColor(180, 240);
+			ctx.fillStyle = "rgb(244, 244, 244)";//randomColor(180, 240);
 			ctx.fillRect(0, 0, this.options.width, this.options.height);
 
 			if(this.options.type == "blend") { //判断验证码类型
@@ -73,12 +74,12 @@
 				var txt = this.options.randomString[i];//txtArr[randomNum(0, txtArr.length)];
 				this.options.code += txt;
 				ctx.font = randomNum(this.options.height/2, this.options.height) + 'px SimHei'; //随机生成字体大小
-				ctx.fillStyle = randomColor(50, 160); //随机生成字体颜色		
-				ctx.shadowOffsetX = randomNum(-3, 3);
-				ctx.shadowOffsetY = randomNum(-3, 3);
+				ctx.fillStyle = "rgb(134, 208, 171)";//randomColor(50, 160); //随机生成字体颜色
+				// ctx.shadowOffsetX = randomNum(-3, 3);
+				// ctx.shadowOffsetY = randomNum(-3, 3);
 				ctx.shadowBlur = randomNum(-3, 3);
-				ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
-				var x = this.options.width / 5 * i;
+				// ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+				var x = this.options.width / 5 * i + 20;
 				var y = this.options.height / 2;
 				var deg = randomNum(-30, 30);
 				/**设置旋转角度和坐标原点**/
@@ -90,7 +91,7 @@
 				ctx.translate(-x, -y);
 			}
 			/**绘制干扰线**/
-			for(var i = 0; i < 4; i++) {
+			for(var i = 0; i < 10; i++) {
 				ctx.strokeStyle = randomColor(40, 180);
 				ctx.beginPath();
 				ctx.moveTo(randomNum(0, this.options.width), randomNum(0, this.options.height));

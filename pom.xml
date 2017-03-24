@@ -11,8 +11,8 @@
 	<properties>
 		<!-- build args -->
 		<default.encoding>UTF-8</default.encoding>
-		<java.source.version>1.6</java.source.version>
-		<java.target.version>1.6</java.target.version>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
 		<project.build.sourceEncoding>${default.encoding}</project.build.sourceEncoding>
 
 		<jetty.version>8.1.16.v20140903</jetty.version>
@@ -164,18 +164,18 @@
 	<build>
 		<finalName>redisdemo</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty.version}</version>
-				<configuration>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8080</port>
-						</connector>
-					</connectors>
-				</configuration>
-			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.mortbay.jetty</groupId>-->
+				<!--<artifactId>jetty-maven-plugin</artifactId>-->
+				<!--<version>${jetty.version}</version>-->
+				<!--<configuration>-->
+					<!--<connectors>-->
+						<!--<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">-->
+							<!--<port>8080</port>-->
+						<!--</connector>-->
+					<!--</connectors>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -187,10 +187,10 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<resources>
-			<resource>
-				<directory>src/main/resource/dev</directory>
-			</resource>
-		</resources>
+		<!--<resources>-->
+			<!--<resource>-->
+				<!--<directory>src/main/resource/dev</directory>-->
+			<!--</resource>-->
+		<!--</resources>-->
 	</build>
 </project>

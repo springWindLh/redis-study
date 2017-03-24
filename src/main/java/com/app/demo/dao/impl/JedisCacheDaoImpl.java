@@ -4,7 +4,6 @@ import com.app.demo.dao.IJedisCacheDao;
 import com.app.demo.dao.support.SerializeUtils;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import redis.clients.jedis.Jedis;

@@ -10,6 +10,8 @@
 <body>
 <div id="v_container" style="width: 200px;height: 50px;"></div>
 <input type="text" id="code_input" value="" placeholder="请输入验证码"/><button id="my_button">验证</button>
+<br><br>
+<img src="/code/binary/page">
 </body>
 <script>
     var verifyCode = new GVerify({
@@ -19,7 +21,7 @@
         height: "30", //默认canvas高度
         type: "blend", //图形验证码默认类型blend:数字字母混合类型、number:纯数字、letter:纯字母
         code: "",
-        randomString:"hksl"
+        randomString:"${requestScope.code}"
     });
     document.getElementById("my_button").onclick = function(){
         var res = verifyCode.validate(document.getElementById("code_input").value);
